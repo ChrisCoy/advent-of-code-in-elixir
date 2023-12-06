@@ -25,23 +25,19 @@ defmodule AdventOfCode.DayOne.SecondSolution do
   end
 
   defp get_sum do
-    File.stream!("assets/day_one/tests.txt")
+    File.stream!("assets/day_one/input.txt")
     |> Enum.map(fn line ->
       line
       |> String.trim()
       |> find_values_on_line()
-      # |> IO.inspect()
     end)
     |> Enum.sum()
   end
 
   defp find_values_on_line(line) do
-    only_numbers_regex = ~r/one|two|three|four|five|six|seven|eight|nine|\d/
+    numbers_on_line = get_numbers(line)
 
-    characters =
-      Regex.scan(only_numbers_regex, line, flat: true) |> List.flatten()
-
-    case characters do
+    case numbers_on_line do
       [] ->
         0
 
@@ -55,6 +51,23 @@ defmodule AdventOfCode.DayOne.SecondSolution do
         last = @numbers[List.last(list)]
 
         String.to_integer("#{first}#{last}")
+    end
+  end
+
+  #
+  #
+  defp get_numbers("", acc), do: acc
+  #
+  defp get_numbers(line, acc \\ []) do
+    only_numbers_regex = ~r/one|two|three|four|five|six|seven|eight|nine|\d/
+
+    characters =
+      Regex.scan(only_numbers_regex, line, flat: true) |> List.flatten()
+
+    case characters do
+      [] -> acc
+      [head] -> get_numbers(String.slice(line, 1..-1), acc ++ [head])
+      [head | _tail] -> get_numbers(String.slice(line, 1..-1), acc ++ [head])
     end
   end
 end
