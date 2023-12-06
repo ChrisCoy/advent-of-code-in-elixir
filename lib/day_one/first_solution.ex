@@ -1,9 +1,9 @@
-defmodule AdventOfCode.DayOne.Solution do
+defmodule AdventOfCode.DayOne.FirstSolution do
   def call do
-    parse_input_to_array()
+    get_sum()
   end
 
-  defp parse_input_to_array do
+  defp get_sum do
     File.stream!("assets/day_one/input.txt")
     |> Enum.map(fn line ->
       line
