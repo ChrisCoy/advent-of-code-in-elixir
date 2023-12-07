@@ -1,4 +1,4 @@
-defmodule AdventOfCode.DayTwo.SecondProblem do
+defmodule AdventOfCode.DayThee.SecondProblem do
   def call do
     solution()
   end

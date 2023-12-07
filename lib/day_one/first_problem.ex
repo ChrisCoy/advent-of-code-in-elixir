@@ -1,4 +1,4 @@
-defmodule AdventOfCode.DayOne.FirstSolution do
+defmodule AdventOfCode.DayOne.FirstProblem do
   def call do
     get_sum()
   end
@@ -37,6 +37,5 @@ defmodule AdventOfCode.DayOne.FirstSolution do
 
         String.to_integer("#{first}#{last}")
     end
-
   end
 end

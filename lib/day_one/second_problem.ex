@@ -1,4 +1,4 @@
-defmodule AdventOfCode.DayOne.SecondSolution do
+defmodule AdventOfCode.DayOne.SecondProblem do
   @numbers %{
     "1" => "1",
     "2" => "2",
