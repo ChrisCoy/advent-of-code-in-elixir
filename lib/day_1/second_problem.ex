@@ -1,4 +1,4 @@
-defmodule AdventOfCode.DayOne.SecondProblem do
+defmodule AdventOfCode.Day1.SecondProblem do
   @numbers %{
     "1" => "1",
     "2" => "2",
@@ -25,7 +25,7 @@ defmodule AdventOfCode.DayOne.SecondProblem do
   end
 
   defp get_sum do
-    File.stream!("assets/day_one/input.txt")
+    File.stream!("assets/day_1/input.txt")
     |> Enum.map(fn line ->
       line
       |> String.trim()

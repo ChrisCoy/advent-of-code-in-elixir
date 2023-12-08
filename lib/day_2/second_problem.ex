@@ -1,4 +1,4 @@
-defmodule AdventOfCode.DayThree.SecondProblem do
+defmodule AdventOfCode.Day2.SecondProblem do
   def call do
     solution()
   end
@@ -35,7 +35,7 @@ defmodule AdventOfCode.DayThree.SecondProblem do
   end
 
   defp read_file do
-    File.stream!("assets/day_two/input.txt")
+    File.stream!("assets/day_2/input.txt")
     |> Enum.map(fn line ->
       line
       |> String.trim()

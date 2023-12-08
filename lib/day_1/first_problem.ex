@@ -1,10 +1,10 @@
-defmodule AdventOfCode.DayOne.FirstProblem do
+defmodule AdventOfCode.Day1.FirstProblem do
   def call do
     get_sum()
   end
 
   defp get_sum do
-    File.stream!("assets/day_one/input.txt")
+    File.stream!("assets/day_1/input.txt")
     |> Enum.map(fn line ->
       line
       |> String.trim()

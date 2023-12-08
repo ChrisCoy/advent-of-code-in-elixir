@@ -1,4 +1,4 @@
-defmodule AdventOfCode.DayThree.FirstProblem do
+defmodule AdventOfCode.Day3.FirstProblem do
   def call do
     solution()
   end
@@ -22,6 +22,7 @@ defmodule AdventOfCode.DayThree.FirstProblem do
     get_numbers(text, coordinates)
     |> Enum.map(&String.to_integer/1)
     |> Enum.sum()
+    |> IO.inspect(label: "first_problem:")
   end
 
   defp get_numbers(text, coords) do
@@ -71,7 +72,7 @@ defmodule AdventOfCode.DayThree.FirstProblem do
   end
 
   defp read_file do
-    File.stream!("assets/day_three/input.txt")
+    File.stream!("assets/day_3/input.txt")
     |> Enum.map(fn line ->
       line
       |> String.replace("\n", ".")

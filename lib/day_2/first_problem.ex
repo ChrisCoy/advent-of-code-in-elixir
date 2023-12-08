@@ -1,4 +1,4 @@
-defmodule AdventOfCode.DayTwo.FirstProblem do
+defmodule AdventOfCode.Day2.FirstProblem do
   @rules %{
     "red" => 12,
     "blue" => 14,
@@ -39,7 +39,7 @@ defmodule AdventOfCode.DayTwo.FirstProblem do
   end
 
   defp read_file do
-    File.stream!("assets/day_two/input.txt")
+    File.stream!("assets/day_2/input.txt")
     |> Enum.map(fn line ->
       line
       |> String.trim()
